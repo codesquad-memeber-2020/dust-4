@@ -1,0 +1,52 @@
+@import 'var';
+@import 'mixin';
+
+@include mobile {
+}
+@include tablet {
+}
+@include desktop {
+}
+
+#dust {
+  padding: 5% 10%;
+  text-align: center;
+  img {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+  }
+  &.grade-1 {
+    background: rgb(3, 116, 184);
+    background: linear-gradient(180deg, rgba(3, 116, 184, 1) 0%, rgba(3, 116, 184, 0.6) 70%, rgba(255, 255, 255, 1) 100%);
+  }
+  &.grade-2 {
+    background: #0194a1;
+  }
+  &.grade-3 {
+    background: #e96902;
+  }
+  &.grade-4 {
+    background: #c22827;
+  }
+}
+
+#dust {
+  .status-img {
+    padding: 5%;
+    img {
+      width: 50%;
+    }
+  }
+  .status-wrap {
+    padding: 2%;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    text-shadow: 2px 2px 2px #aaa;
+    line-height: 1.5;
+    .status-txt {
+      font-weight: bold;
+      font-size: $font-size-extra;
+    }
+  }
+}

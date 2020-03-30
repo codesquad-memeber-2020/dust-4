@@ -19,7 +19,7 @@ time, mark, audio, video {
   border:0;
   outline:0;
   font-family: $font-family-default;
-  font-size: $font-size-default;
+  font-size: $font-size-mobile;
   letter-spacing: -0.02em;
   vertical-align:baseline;
   background:transparent;
@@ -112,7 +112,7 @@ input[type="tel"] {
   height: 50px;
   padding: 0 20px;
   font-weight: bold;
-  font-size: $font-size-default;
+  font-size: $font-size-mobile;
   color: $color-default;
   border: 1px solid #d5d2d2;
   border-radius: 4px;
@@ -123,13 +123,13 @@ input[type="date"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder {
   font-weight: normal;
-  font-size: $font-size-default;
+  font-size: $font-size-mobile;
   color: #ccc;
 }
 select {
   width: 100%;
   height: 50px;
-  font-size: $font-size-default;
+  font-size: $font-size-mobile;
   color: $color-default;
   text-indent: 15px;
   border: 1px solid #d5d2d2;
@@ -152,3 +152,5 @@ button {
   width: 100%;
   height: 50px;
 }
+
+img {max-width:100%;}

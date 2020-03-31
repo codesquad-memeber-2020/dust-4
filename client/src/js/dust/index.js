@@ -29,7 +29,7 @@ const tabNav = new TabNav({
   tabContents: $SELETOR_ALL('.tab-contents section')
 });
 
-const getDustStatusText = grade => {
+const getDustStatusMessage = grade => {
   switch (grade) {
     case '1':
       return DUST_GARADE.STATUS_MESSAGE.GOOD;
@@ -42,11 +42,11 @@ const getDustStatusText = grade => {
   }
 };
 
-const updateDustGradeView = ({ target, station, grade, statusText }) => {
+const updateDustGradeView = ({ target, station, grade, statusMessage }) => {
   return (
     target.wrap.classList.add(`grade-${grade}`),
     (target.station.innerHTML = station || DEFAULT_STATION),
-    (target.emoji.innerHTML = `<img src="../../assets/emoji/grade_${grade}.png" alt="${statusText}">`)
+    (target.emoji.innerHTML = `<img src="../../assets/emoji/grade_${grade}.png" alt="${statusMessage}">`)
   );
 };
 
@@ -59,7 +59,7 @@ const dustViewInit = () => {
     target: DUST_ELEMENT,
     station: DUST_STATION,
     grade: DUST_TIMELINE[0].pm10Grade,
-    statusText: getDustStatusText(DUST_TIMELINE[0].pm10Grade)
+    statusMessage: getDustStatusMessage(DUST_TIMELINE[0].pm10Grade)
   });
   updateDustTimelineView({
     target: DUST_ELEMENT,

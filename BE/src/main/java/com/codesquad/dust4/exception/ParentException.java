@@ -1,7 +1,5 @@
 package com.codesquad.dust4.exception;
-
-
-import com.codesquad.dust4.dto.ApiResponse;
+import com.codesquad.dust4.dto.ForecastResponseDto;
 
 public class ParentException extends RuntimeException {
   private String errorMessage;
@@ -10,7 +8,7 @@ public class ParentException extends RuntimeException {
     this.errorMessage = errorMessage;
   }
 
-  public ApiResponse returnErrorMessage() {
-    return new ApiResponse("ERROR", errorMessage);
+  public ForecastResponseDto returnErrorMessage() {
+    return new ForecastResponseDto(errorMessage);
   }
 }

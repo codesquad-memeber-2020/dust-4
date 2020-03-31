@@ -16,6 +16,8 @@
 		ABA7585E2431CE3300FE078E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA7585C2431CE3300FE078E /* LaunchScreen.storyboard */; };
 		ABA758692431CE3300FE078E /* DustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758682431CE3300FE078E /* DustTests.swift */; };
 		ABA758742431CE3300FE078E /* DustUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758732431CE3300FE078E /* DustUITests.swift */; };
+		ABA758832431F99C00FE078E /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758822431F99C00FE078E /* StatusView.swift */; };
+		ABA758852432F50400FE078E /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758842432F50400FE078E /* CustomTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		ABA7586F2431CE3300FE078E /* DustUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DustUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA758732431CE3300FE078E /* DustUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustUITests.swift; sourceTree = "<group>"; };
 		ABA758752431CE3300FE078E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA758822431F99C00FE078E /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		ABA758842432F50400FE078E /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		ABA7584E2431CE3200FE078E /* Dust */ = {
 			isa = PBXGroup;
 			children = (
+				ABA758812431F97400FE078E /* View */,
 				ABA7584F2431CE3200FE078E /* AppDelegate.swift */,
 				ABA758512431CE3200FE078E /* SceneDelegate.swift */,
 				ABA758532431CE3200FE078E /* FirstViewController.swift */,
@@ -129,6 +134,15 @@
 				ABA758752431CE3300FE078E /* Info.plist */,
 			);
 			path = DustUITests;
+			sourceTree = "<group>";
+		};
+		ABA758812431F97400FE078E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABA758822431F99C00FE078E /* StatusView.swift */,
+				ABA758842432F50400FE078E /* CustomTableView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +278,10 @@
 			files = (
 				ABA758562431CE3200FE078E /* SecondViewController.swift in Sources */,
 				ABA758542431CE3200FE078E /* FirstViewController.swift in Sources */,
+				ABA758852432F50400FE078E /* CustomTableView.swift in Sources */,
 				ABA758502431CE3200FE078E /* AppDelegate.swift in Sources */,
 				ABA758522431CE3200FE078E /* SceneDelegate.swift in Sources */,
+				ABA758832431F99C00FE078E /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

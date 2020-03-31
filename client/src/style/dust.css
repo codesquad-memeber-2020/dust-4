@@ -254,25 +254,25 @@
   background: #c22827;
 }
 
-#dust .grade-area {
+#dust .grade-view {
   height: 40vh;
 }
 
-#dust .timeline-area {
+#dust .timeline-view {
   height: 36vh;
   padding: 2%;
   margin: 2vh 5%;
 }
 
-.grade-area .status-img {
+.grade-view .status-img {
   height: 20vh;
 }
 
-.grade-area .status-img img {
+.grade-view .status-img img {
   height: 100%;
 }
 
-.grade-area .status-wrap {
+.grade-view .status-wrap {
   padding: 2%;
   margin: 0 5%;
   max-height: 20vh;
@@ -283,12 +283,12 @@
   line-height: 1.5;
 }
 
-.grade-area .status-wrap .status-txt {
+.grade-view .status-wrap .status-txt {
   font-weight: bold;
   font-size: 2em;
 }
 
-.grade-area .status-wrap .status-display {
+.grade-view .status-wrap .status-display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,38 +300,38 @@
           justify-content: center;
 }
 
-.grade-area .status-wrap .status-display > div, .grade-area .status-wrap .status-display > div span {
+.grade-view .status-wrap .status-display > div, .grade-view .status-wrap .status-display > div span {
   font-size: 1.5em;
 }
 
-.grade-area .status-wrap .status-display > div {
+.grade-view .status-wrap .status-display > div {
   margin: 0 10px;
 }
 
-.grade-area .status-wrap .status-display > div span {
+.grade-view .status-wrap .status-display > div span {
   margin: 0 5px;
 }
 
-.grade-area .status-wrap .status-station,
-.grade-area .status-wrap .status-station * {
+.grade-view .status-wrap .status-station,
+.grade-view .status-wrap .status-station * {
   font-size: 1.25em;
 }
 
-.grade-area .status-wrap .status-station strong {
+.grade-view .status-wrap .status-station strong {
   margin-right: 2px;
 }
 
-.timeline-area {
+.timeline-view {
   overflow-y: auto;
   border-radius: 30px 30px 0 0;
   background: rgba(255, 255, 255, 0.7);
 }
 
-.timeline-area .dust-timeline li {
+.timeline-view .dust-timeline li {
   margin: 1%;
 }
 
-.timeline-area .dust-timeline li span {
+.timeline-view .dust-timeline li span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,14 +345,14 @@
   background: #0474b8;
 }
 
-.timeline-area .dust-timeline li span.dust-grade2 {
+.timeline-view .dust-timeline li span.dust-grade2 {
   background: #0194a1;
 }
 
-.timeline-area .dust-timeline li span.dust-grade3 {
+.timeline-view .dust-timeline li span.dust-grade3 {
   background: #e96902;
 }
 
-.timeline-area .dust-timeline li span.dust-grade4 {
+.timeline-view .dust-timeline li span.dust-grade4 {
   background: #c22827;
 }

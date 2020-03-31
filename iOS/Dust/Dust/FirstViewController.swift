@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FirstViewController: UIViewController {
 
@@ -16,7 +17,9 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         self.emojiLabel.text = "😄"
     }
+}
 
-
+extension FirstViewController: CLLocationManagerDelegate {
+    
 }
 

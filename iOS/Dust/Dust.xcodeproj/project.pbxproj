@@ -22,6 +22,8 @@
 		ABA7588C2433245B00FE078E /* DustTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7588B2433245B00FE078E /* DustTableCell.swift */; };
 		ABA7588E2433262B00FE078E /* DustData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7588D2433262B00FE078E /* DustData.swift */; };
 		ABA758902433271400FE078E /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7588F2433271400FE078E /* DataTask.swift */; };
+		ABA758922433425F00FE078E /* TextStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758912433425F00FE078E /* TextStatusLabel.swift */; };
+		ABA758942433426F00FE078E /* EmojiStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758932433426F00FE078E /* EmojiStatusLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		ABA7588B2433245B00FE078E /* DustTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustTableCell.swift; sourceTree = "<group>"; };
 		ABA7588D2433262B00FE078E /* DustData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustData.swift; sourceTree = "<group>"; };
 		ABA7588F2433271400FE078E /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
+		ABA758912433425F00FE078E /* TextStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStatusLabel.swift; sourceTree = "<group>"; };
+		ABA758932433426F00FE078E /* EmojiStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiStatusLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				ABA758842432F50400FE078E /* StatusTableView.swift */,
 				ABA758872433152600FE078E /* StatusTableViewDataSource.swift */,
 				ABA7588B2433245B00FE078E /* DustTableCell.swift */,
+				ABA758912433425F00FE078E /* TextStatusLabel.swift */,
+				ABA758932433426F00FE078E /* EmojiStatusLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,8 +304,10 @@
 			files = (
 				ABA758882433152600FE078E /* StatusTableViewDataSource.swift in Sources */,
 				ABA758562431CE3200FE078E /* SecondViewController.swift in Sources */,
+				ABA758922433425F00FE078E /* TextStatusLabel.swift in Sources */,
 				ABA758542431CE3200FE078E /* FirstViewController.swift in Sources */,
 				ABA7588E2433262B00FE078E /* DustData.swift in Sources */,
+				ABA758942433426F00FE078E /* EmojiStatusLabel.swift in Sources */,
 				ABA758852432F50400FE078E /* StatusTableView.swift in Sources */,
 				ABA758502431CE3200FE078E /* AppDelegate.swift in Sources */,
 				ABA758902433271400FE078E /* DataTask.swift in Sources */,

@@ -9,17 +9,27 @@
 import UIKit
 import CoreLocation
 
-class FirstViewController: UIViewController {
-
-    @IBOutlet weak var emojiLabel: UILabel!
+class FirstViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var locationManager:CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emojiLabel.text = "😄"
+        setUpLocationManager()
+    }
+    
+    //test
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let coor = manager.location?.coordinate{
+            print("latitude" + String(coor.latitude) + "/ longitude" + String(coor.longitude))
+        }
+    }
+    
+    private func setUpLocationManager() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
     }
 }
-
-extension FirstViewController: CLLocationManagerDelegate {
-    
-}
-

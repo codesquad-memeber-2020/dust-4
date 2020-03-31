@@ -6,22 +6,21 @@ public class DustForecast {
   private String informData; //예측통보시간
   private String informGrade; //지역별 등급
   private String informOverall; //예보 개황
-  private String IMAGE_PM10_0600; //PM10 6시 이미지
-  private String IMAGE_PM10_1200; //PM10 12시 이미지
-  private String IMAGE_PM10_1800; //PM10 18시 이미지
+  private String IMAGE_PM10_1; //PM10 현재 요청 시간에서 가장 가까운 시간대의 이미지
+  private String IMAGE_PM10_2; //PM10 현재 요청 시간에서 두 번째로 가까운 시간대의 이미지
+  private String IMAGE_PM10_3; //PM10 현재 요청 시간에서 세 번째로 가까운 시간대의 이미지
 
   public DustForecast() {}
 
   public DustForecast(String dataTime, String informData, String informGrade,
-      String informOverall, String IMAGE_PM10_0600, String IMAGE_PM10_1200,
-      String IMAGE_PM10_1800) {
+      String informOverall, String IMAGE_PM10_1, String IMAGE_PM10_2, String IMAGE_PM10_3) {
     this.dataTime = dataTime;
     this.informData = informData;
     this.informGrade = informGrade;
     this.informOverall = informOverall;
-    this.IMAGE_PM10_0600 = IMAGE_PM10_0600;
-    this.IMAGE_PM10_1200 = IMAGE_PM10_1200;
-    this.IMAGE_PM10_1800 = IMAGE_PM10_1800;
+    this.IMAGE_PM10_1 = IMAGE_PM10_1;
+    this.IMAGE_PM10_2 = IMAGE_PM10_2;
+    this.IMAGE_PM10_3 = IMAGE_PM10_3;
   }
 
   public String getDataTime() {
@@ -56,27 +55,27 @@ public class DustForecast {
     this.informOverall = informOverall;
   }
 
-  public String getIMAGE_PM10_0600() {
-    return IMAGE_PM10_0600;
+  public String getIMAGE_PM10_1() {
+    return IMAGE_PM10_1;
   }
 
-  public void setIMAGE_PM10_0600(String IMAGE_PM10_0600) {
-    this.IMAGE_PM10_0600 = IMAGE_PM10_0600;
+  public void setIMAGE_PM10_1(String IMAGE_PM10_1) {
+    this.IMAGE_PM10_1 = IMAGE_PM10_1;
   }
 
-  public String getIMAGE_PM10_1200() {
-    return IMAGE_PM10_1200;
+  public String getIMAGE_PM10_2() {
+    return IMAGE_PM10_2;
   }
 
-  public void setIMAGE_PM10_1200(String IMAGE_PM10_1200) {
-    this.IMAGE_PM10_1200 = IMAGE_PM10_1200;
+  public void setIMAGE_PM10_2(String IMAGE_PM10_2) {
+    this.IMAGE_PM10_2 = IMAGE_PM10_2;
   }
 
-  public String getIMAGE_PM10_1800() {
-    return IMAGE_PM10_1800;
+  public String getIMAGE_PM10_3() {
+    return IMAGE_PM10_3;
   }
 
-  public void setIMAGE_PM10_1800(String IMAGE_PM10_1800) {
-    this.IMAGE_PM10_1800 = IMAGE_PM10_1800;
+  public void setIMAGE_PM10_3(String IMAGE_PM10_3) {
+    this.IMAGE_PM10_3 = IMAGE_PM10_3;
   }
 }

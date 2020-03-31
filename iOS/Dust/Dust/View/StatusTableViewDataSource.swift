@@ -9,8 +9,10 @@
 import UIKit
 
 class StatusTableViewDataSource: NSObject, UITableViewDataSource {
+    var dustData: DustData?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 23
+        return dustData?.content.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

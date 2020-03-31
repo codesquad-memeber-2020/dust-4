@@ -6,15 +6,16 @@
   <title>미세먼지 Team Project</title>
   <link rel="stylesheet" href="../../style/common.css">
   <link rel="stylesheet" href="../../style/dust.css">
+  <script type="module" src="../../js/dust/index.js"></script>
 </head>
 <body>
   <div id="wrap">
     <header>
-      <nav>
+      <nav class="tab-nav">
         <ul>
           <li><a href="#" id="">미세먼지</a></li>
           <li><a href="#" id="">예보</a></li>
-        </ul>˜
+        </ul>
       </nav>
     </header>
     <div id="container">
@@ -29,16 +30,18 @@
               <div class="display-value"><span>35</span>㎍/㎥</div>
               <div class="display-time"><span>16:00</span></div>
             </div>
-            <div class="status-station"></div><strong>강남구</strong>측정소 기준
+            <div class="status-station"><strong>강남구</strong>측정소 기준</div>
           </div>
         </div>
-        <div class="time-area"></div>
+        <div class="timeline-area">
+          <ul class="dust-timeline"></ul>
+        </div>
       </section>
       <!-- 예보 내용, 템플레이팅 예정 -->
-      <section id="forecast">
+      <!-- <section id="forecast">
         <h1 class="title">미세먼지 예보</h1>
 
-      </section>
+      </section> -->
     </div>
     <footer>
       <p>Dust project #team4 <strong>@codesquad</strong></p>

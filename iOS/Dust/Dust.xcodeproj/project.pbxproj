@@ -18,6 +18,7 @@
 		ABA758742431CE3300FE078E /* DustUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758732431CE3300FE078E /* DustUITests.swift */; };
 		ABA758832431F99C00FE078E /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758822431F99C00FE078E /* StatusView.swift */; };
 		ABA758852432F50400FE078E /* StatusTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758842432F50400FE078E /* StatusTableView.swift */; };
+		ABA758882433152600FE078E /* StatusTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758872433152600FE078E /* StatusTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		ABA758752431CE3300FE078E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABA758822431F99C00FE078E /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		ABA758842432F50400FE078E /* StatusTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableView.swift; sourceTree = "<group>"; };
+		ABA758872433152600FE078E /* StatusTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				ABA758822431F99C00FE078E /* StatusView.swift */,
 				ABA758842432F50400FE078E /* StatusTableView.swift */,
+				ABA758872433152600FE078E /* StatusTableViewDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA758882433152600FE078E /* StatusTableViewDataSource.swift in Sources */,
 				ABA758562431CE3200FE078E /* SecondViewController.swift in Sources */,
 				ABA758542431CE3200FE078E /* FirstViewController.swift in Sources */,
 				ABA758852432F50400FE078E /* StatusTableView.swift in Sources */,

@@ -32,6 +32,9 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="wZ6-1g-Brz"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRr-SL-1vg" customClass="StatusView" customModule="Dust" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="423"/>
@@ -83,6 +86,12 @@
                                     <constraint firstItem="hA0-aY-HxI" firstAttribute="centerX" secondItem="CRr-SL-1vg" secondAttribute="centerX" id="vHL-Uz-l4o"/>
                                     <constraint firstItem="hA0-aY-HxI" firstAttribute="top" secondItem="CRr-SL-1vg" secondAttribute="topMargin" id="yqP-Ol-8DO"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dateTime" destination="l4i-Jx-uWD" id="VIw-Nn-aZR"/>
+                                    <outlet property="gradeStatus" destination="htH-Zk-XkM" id="JeF-tO-mcz"/>
+                                    <outlet property="ppm" destination="Bze-ZD-Pr8" id="iUU-Pd-3KY"/>
+                                    <outlet property="stationName" destination="oIc-k8-PCa" id="k2H-u4-LTK"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

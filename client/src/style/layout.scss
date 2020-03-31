@@ -14,6 +14,7 @@ header {
       justify-content: center;
       align-items: center;
       width: 50%;
+      height: 100%;
     }
   }
 }
@@ -23,6 +24,10 @@ header {
   height: 90vh;
   section {
     overflow: hidden;
+    display: none;
+    &.visible {
+      display: block;
+    }
   }
   .title {
     display: flex;

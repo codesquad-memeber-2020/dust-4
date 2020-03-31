@@ -234,6 +234,7 @@ header .tab-nav ul li {
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
+  height: 100%;
 }
 
 #container {
@@ -243,6 +244,11 @@ header .tab-nav ul li {
 
 #container section {
   overflow: hidden;
+  display: none;
+}
+
+#container section.visible {
+  display: block;
 }
 
 #container .title {

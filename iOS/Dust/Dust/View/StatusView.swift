@@ -1,13 +1,9 @@
-//
-//  StatusView.swift
-//  Dust
-//
-//  Created by 임승혁 on 2020/03/30.
-//  Copyright © 2020 임승혁. All rights reserved.
-//
-
 import UIKit
 
 class StatusView: UIView {
-
+    @IBOutlet weak var gradeStatusEmoji: EmojiStatusLabel!
+    @IBOutlet weak var gradeStatus: TextStatusLabel!
+    @IBOutlet weak var ppm: UILabel!
+    @IBOutlet weak var dateTime: UILabel!
+    @IBOutlet weak var stationName: UILabel!
 }

@@ -67,22 +67,7 @@ public class DustStatusPublicApi {
         connection.setRequestMethod("GET");
         connection.setRequestProperty("Content-type", "application/json");
 
-        BufferedReader bufferedReader;
-        if (connection.getResponseCode() >= 200 && connection.getResponseCode() <= 300) {
-            bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        } else {
-            bufferedReader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-        }
-
-        StringBuilder stringBuilder = new StringBuilder();
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            stringBuilder.append(line);
-        }
-
-        bufferedReader.close();
-        connection.disconnect();
-        return stringBuilder.toString();
+        return readString(connection);
     }
 
     private static  List<DustStatusQuo> statusQuos(String statusJson) {
@@ -114,21 +99,11 @@ public class DustStatusPublicApi {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        System.out.println(statusList);
+
         return statusList;
     }
 
-    private static String dustStatusFromPublicApi(LocationOfStation station) throws IOException {
-        URL url = new URL(PUBLIC_API_REQUEST_URL +
-                "ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=" +
-                station.getStationName() + "&dataTerm=DAILY&pageNo=1&numOfRows=25&ServiceKey=" +
-                SERVICE_KEY +
-                "&ver=1.3&_returnType=json");
-
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
-        connection.setRequestProperty("Cotent-type", "application/json");
-
+    private static String readString(HttpURLConnection connection) throws IOException {
         BufferedReader bufferedReader;
         if (connection.getResponseCode() >= 200 && connection.getResponseCode() <= 300) {
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -144,6 +119,22 @@ public class DustStatusPublicApi {
 
         bufferedReader.close();
         connection.disconnect();
+
         return stringBuilder.toString();
+    }
+
+
+    private static String dustStatusFromPublicApi(LocationOfStation station) throws IOException {
+        URL url = new URL(PUBLIC_API_REQUEST_URL +
+                "ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=" +
+                station.getStationName() + "&dataTerm=DAILY&pageNo=1&numOfRows=25&ServiceKey=" +
+                SERVICE_KEY +
+                "&ver=1.3&_returnType=json");
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.setRequestProperty("Cotent-type", "application/json");
+
+        return readString(connection);
     }
 }

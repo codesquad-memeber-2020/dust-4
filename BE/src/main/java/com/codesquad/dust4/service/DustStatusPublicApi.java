@@ -2,6 +2,7 @@ package com.codesquad.dust4.service;
 
 import com.codesquad.dust4.domain.DustStatusQuo;
 import com.codesquad.dust4.domain.LocationOfStation;
+import com.codesquad.dust4.dto.DustInfoByStationDto;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -19,13 +20,13 @@ public class DustStatusPublicApi {
     private static final String SERVICE_KEY = "GHE6PYOY0ZzdJ8j%2BISHC3VOKNQI1DG60chkCAE19uUD5s1XCnXOseXvJfBJkFZlI1zpn2EGLDnkYy%2FQrgLpd6A%3D%3D";
     private static final String PUBLIC_API_REQUEST_URL = "http://openapi.airkorea.or.kr/openapi/services/rest/";
 
-    public static List<DustStatusQuo> dustStatus(String tmX, String tmY) throws IOException {
+    public static DustInfoByStationDto dustStatus(String tmX, String tmY) throws IOException {
         String response = stationFromPublicApi(tmX, tmY);
         LocationOfStation closestStation = closestStation(response);
         String dustStatusResponse = dustStatusFromPublicApi(closestStation);
         List<DustStatusQuo> status = statusQuos(dustStatusResponse);
-        System.out.println(status);
-        return status;
+
+        return new DustInfoByStationDto(status, closestStation);
     }
 
     private static LocationOfStation closestStation(String stationJson) {

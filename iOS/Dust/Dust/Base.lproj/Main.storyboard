@@ -29,26 +29,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfI-6i-j1O" customClass="StatusBarView" customModule="Dust" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfI-6i-j1O" customClass="StatusBarView" customModule="Dust" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4O-N8-v9C">
-                                                            <rect key="frame" x="364" y="2" width="42" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4O-N8-v9C">
+                                                    <rect key="frame" x="364" y="2" width="42" height="21"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="lfI-6i-j1O" firstAttribute="leading" secondItem="EJM-zv-7p0" secondAttribute="leading" id="dAk-Um-E7P"/>
-                                                <constraint firstAttribute="bottom" secondItem="lfI-6i-j1O" secondAttribute="bottom" id="mGO-YN-0Bf"/>
-                                                <constraint firstItem="lfI-6i-j1O" firstAttribute="top" secondItem="EJM-zv-7p0" secondAttribute="top" id="rkH-ZD-sjg"/>
-                                                <constraint firstAttribute="trailing" secondItem="lfI-6i-j1O" secondAttribute="trailing" id="zfs-oF-i1V"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="I4O-N8-v9C" secondAttribute="trailing" constant="-12" id="R0d-tY-v0v"/>
+                                                <constraint firstItem="I4O-N8-v9C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EJM-zv-7p0" secondAttribute="leading" constant="20" symbolic="YES" id="Wdd-jA-FsI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

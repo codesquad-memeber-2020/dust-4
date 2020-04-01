@@ -18,9 +18,9 @@ class StatusTableViewDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as! DustTableCell
         cell.ppmStatus.text = dustData?.content[indexPath.row].pm10Value
+        cell.setStatusBarColor(ppmGrade: dustData?.content[indexPath.row].pm10Grade)
+        cell.setStatusBarWidth()
         
         return cell
     }
-    
-
 }

@@ -18,7 +18,8 @@ class StatusBarView: UIView {
     
     var status: Status = .normal {
         didSet {
-            setStatus(to: status) }
+            setStatus(to: status)
+        }
     }
     
     func setStatus(to status: Status) {

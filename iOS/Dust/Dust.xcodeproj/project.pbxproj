@@ -155,11 +155,11 @@
 			isa = PBXGroup;
 			children = (
 				ABA758822431F99C00FE078E /* StatusView.swift */,
+				ABA758932433426F00FE078E /* EmojiStatusLabel.swift */,
+				ABA758912433425F00FE078E /* TextStatusLabel.swift */,
 				ABA758842432F50400FE078E /* StatusTableView.swift */,
 				ABA758872433152600FE078E /* StatusTableViewDataSource.swift */,
 				ABA7588B2433245B00FE078E /* DustTableCell.swift */,
-				ABA758912433425F00FE078E /* TextStatusLabel.swift */,
-				ABA758932433426F00FE078E /* EmojiStatusLabel.swift */,
 				ABA75895243454D300FE078E /* StatusBarView.swift */,
 			);
 			path = View;

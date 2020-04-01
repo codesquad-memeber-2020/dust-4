@@ -68,4 +68,16 @@ public class DustStatusQuo {
   public void setPm10Grade1h(String pm10Grade1h) {
     this.pm10Grade1h = pm10Grade1h;
   }
+
+  @Override
+  public String toString() {
+    return "DustStatusQuo{" +
+            "dataTime='" + dataTime + '\'' +
+            ", location=" + location +
+            ", pm10Value='" + pm10Value + '\'' +
+            ", pm10Value24='" + pm10Value24 + '\'' +
+            ", pm10Grade='" + pm10Grade + '\'' +
+            ", pm10Grade1h='" + pm10Grade1h + '\'' +
+            '}';
+  }
 }

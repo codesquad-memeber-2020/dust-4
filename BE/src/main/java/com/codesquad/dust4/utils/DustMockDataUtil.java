@@ -9,10 +9,8 @@ public class DustMockDataUtil {
     DustStatusQuo MockData = new DustStatusQuo();
     //MockData.setDataTime("2020-03-30 02:00");
     MockData.setPm10Grade("2");
-    MockData.setPm10Grade1h("2");
     MockData.setPm10Value("40");
     MockData.setPm10Value("40");
-    MockData.setPm10Value24("41");
 
     return MockData;
   }

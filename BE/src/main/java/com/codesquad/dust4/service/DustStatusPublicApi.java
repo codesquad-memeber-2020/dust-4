@@ -39,14 +39,12 @@ public class DustStatusPublicApi {
             obj = (JSONObject) parser.parse(stationJson);
             array = (JSONArray) obj.get("list");
             for (Object o : array) {
-                LocationOfStation station = new LocationOfStation();
                 JSONObject o1 = (JSONObject) o;
                 String addr = String.valueOf(o1.get("addr"));
                 String stationName = String.valueOf(o1.get("stationName"));
                 String tm = String.valueOf(o1.get("tm"));
-                station.setAddr(addr);
-                station.setStationName(stationName);
-                station.setTm(Float.parseFloat(tm));
+
+                LocationOfStation station = new LocationOfStation(stationName, addr, Float.parseFloat(tm));
                 stations.add(station);
             }
         } catch (ParseException e) {
@@ -80,20 +78,12 @@ public class DustStatusPublicApi {
             obj = (JSONObject) parser.parse(statusJson);
             array = (JSONArray) obj.get("list");
             for (Object object : array) {
-                DustStatusQuo status = new DustStatusQuo();
                 JSONObject stationObject = (JSONObject) object;
                 String dateTime = String.valueOf(stationObject.get("dataTime"));
                 String grade = String.valueOf(stationObject.get("pm10Grade"));
                 String value = String.valueOf(stationObject.get("pm10Value"));
-                String grade1h = String.valueOf(stationObject.get("pm10Grade10"));
-                String value24 = String .valueOf(stationObject.get("pm10Value24"));
 
-                status.setDataTime(dateTime);
-                status.setPm10Grade(grade);
-                status.setPm10Value(value);
-                status.setPm10Grade1h(grade1h);
-                status.setPm10Value24(value24);
-
+                DustStatusQuo status = new DustStatusQuo(dateTime, value, grade);
                 statusList.add(status);
             }
         } catch (ParseException e) {

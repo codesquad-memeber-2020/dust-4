@@ -10,7 +10,8 @@ import UIKit
 import CoreLocation
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var DustTableView: StatusTableView!
+    @IBOutlet weak var dustTableView: StatusTableView!
+    @IBOutlet weak var statusView: StatusView!
 
     let dataTask = DataTask()
     var locationManager:CLLocationManager!
@@ -19,7 +20,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLocationManager()
-        self.DustTableView.dataSource = tableViewDataSource
+        self.dustTableView.dataSource = tableViewDataSource
     }
     
     private func setUpLocationManager() {
@@ -34,7 +35,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         if let coor = manager.location?.coordinate{
             dataTask.requestInfoFromNearStation(latitude: Int(coor.latitude), longitude: Int(coor.longitude)) { (DustData) in
                     self.tableViewDataSource.dustData = DustData
-                    self.DustTableView.reloadData()
+                    self.dustTableView.reloadData()
             }
         }
         locationManager.stopUpdatingLocation()

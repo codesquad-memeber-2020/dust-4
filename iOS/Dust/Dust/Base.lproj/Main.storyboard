@@ -22,14 +22,14 @@
                                     <constraint firstAttribute="height" constant="390" id="xMs-HD-EUd"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statusCell" rowHeight="25" id="ArV-w9-aAj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statusCell" rowHeight="25" id="ArV-w9-aAj" customClass="DustTableCell" customModule="Dust" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="25"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ArV-w9-aAj" id="EJM-zv-7p0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfI-6i-j1O">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfI-6i-j1O" customClass="StatusBarView" customModule="Dust" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4O-N8-v9C">
@@ -41,7 +41,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -51,6 +51,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="lfI-6i-j1O" secondAttribute="trailing" id="zfs-oF-i1V"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ppmStatus" destination="I4O-N8-v9C" id="ems-hI-2Bn"/>
+                                            <outlet property="statusbar" destination="lfI-6i-j1O" id="BWk-XV-NVE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -112,6 +116,7 @@
                                 <connections>
                                     <outlet property="dateTime" destination="l4i-Jx-uWD" id="VIw-Nn-aZR"/>
                                     <outlet property="gradeStatus" destination="htH-Zk-XkM" id="JeF-tO-mcz"/>
+                                    <outlet property="gradeStatusEmoji" destination="rI0-sd-TnK" id="T9G-00-lcS"/>
                                     <outlet property="ppm" destination="Bze-ZD-Pr8" id="iUU-Pd-3KY"/>
                                     <outlet property="stationName" destination="oIc-k8-PCa" id="k2H-u4-LTK"/>
                                 </connections>
@@ -132,6 +137,7 @@
                     <tabBarItem key="tabBarItem" title="미세먼지" image="cloud.fill" catalog="system" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="DustTableView" destination="VVp-ff-Onb" id="nlO-6O-OlT"/>
+                        <outlet property="statusView" destination="CRr-SL-1vg" id="rtq-NH-Pyk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

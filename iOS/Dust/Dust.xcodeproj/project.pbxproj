@@ -24,6 +24,7 @@
 		ABA758902433271400FE078E /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7588F2433271400FE078E /* DataTask.swift */; };
 		ABA758922433425F00FE078E /* TextStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758912433425F00FE078E /* TextStatusLabel.swift */; };
 		ABA758942433426F00FE078E /* EmojiStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758932433426F00FE078E /* EmojiStatusLabel.swift */; };
+		ABA75896243454D300FE078E /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA75895243454D300FE078E /* StatusBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		ABA7588F2433271400FE078E /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
 		ABA758912433425F00FE078E /* TextStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStatusLabel.swift; sourceTree = "<group>"; };
 		ABA758932433426F00FE078E /* EmojiStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiStatusLabel.swift; sourceTree = "<group>"; };
+		ABA75895243454D300FE078E /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				ABA7588B2433245B00FE078E /* DustTableCell.swift */,
 				ABA758912433425F00FE078E /* TextStatusLabel.swift */,
 				ABA758932433426F00FE078E /* EmojiStatusLabel.swift */,
+				ABA75895243454D300FE078E /* StatusBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				ABA758922433425F00FE078E /* TextStatusLabel.swift in Sources */,
 				ABA758542431CE3200FE078E /* FirstViewController.swift in Sources */,
 				ABA7588E2433262B00FE078E /* DustData.swift in Sources */,
+				ABA75896243454D300FE078E /* StatusBarView.swift in Sources */,
 				ABA758942433426F00FE078E /* EmojiStatusLabel.swift in Sources */,
 				ABA758852432F50400FE078E /* StatusTableView.swift in Sources */,
 				ABA758502431CE3200FE078E /* AppDelegate.swift in Sources */,

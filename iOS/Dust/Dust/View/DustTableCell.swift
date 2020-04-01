@@ -9,6 +9,8 @@
 import UIKit
 
 class DustTableCell: UITableViewCell {
+    @IBOutlet weak var statusbar: StatusBarView!
+    @IBOutlet weak var ppmStatus: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,5 +19,7 @@ class DustTableCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    
 
 }

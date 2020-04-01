@@ -16,7 +16,9 @@ class StatusTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "statusCell", for: indexPath) as! DustTableCell
+        cell.ppmStatus.text = dustData?.content[indexPath.row].pm10Value
+        
         return cell
     }
     

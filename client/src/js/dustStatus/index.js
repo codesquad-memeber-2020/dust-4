@@ -53,14 +53,14 @@ const updateDustTimelineView = list => DUST_ELEMENT.timeline.insertAdjacentHTML(
 const updateDustStatusView = (curretDust = 0) => {
   const { dataTime, pm10Grade, pm10Value } = DUST_TIMELINE[curretDust];
   const gradeClassList = Object.values(DUST_GRADE.STATUS_CLASS);
-
+  
   DUST_ELEMENT.station.innerHTML = DUST_STATION;
   DUST_ELEMENT.time.innerHTML = dataTime;
   DUST_ELEMENT.value.innerHTML = pm10Value;
   DUST_ELEMENT.wrap.classList.remove(...gradeClassList);
-  DUST_ELEMENT.wrap.classList.add(DUST_GRADE.STATUS_CLASS[pm10Value]);
-  DUST_ELEMENT.statusTxt.innerHTML = DUST_GRADE.STATUS_MESSAGE[pm10Value];
-  DUST_ELEMENT.emoji.innerHTML = `<img src="../../assets/emoji/grade_${pm10Grade}.png" alt="${DUST_GRADE.STATUS_MESSAGE[pm10Value]}">`;
+  DUST_ELEMENT.wrap.classList.add(DUST_GRADE.STATUS_CLASS[pm10Grade]);
+  DUST_ELEMENT.statusTxt.innerHTML = DUST_GRADE.STATUS_MESSAGE[pm10Grade];
+  DUST_ELEMENT.emoji.innerHTML = `<img src="../../assets/emoji/grade_${pm10Grade}.png" alt="${DUST_GRADE.STATUS_MESSAGE[pm10Grade]}">`;
   return;
 };
 

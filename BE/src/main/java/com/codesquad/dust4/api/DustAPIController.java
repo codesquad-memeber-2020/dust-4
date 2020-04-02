@@ -3,8 +3,11 @@ package com.codesquad.dust4.api;
 import com.codesquad.dust4.domain.DustForecast;
 import com.codesquad.dust4.dto.DustInfoByStationDto;
 import com.codesquad.dust4.dto.ForecastResponseDto;
+import com.codesquad.dust4.dto.LocationReturnDto;
 import com.codesquad.dust4.service.DustStatusPublicApi;
 import com.codesquad.dust4.utils.DustMockDataUtil;
+import com.codesquad.dust4.utils.LocationConverterUtil;
+import java.util.concurrent.ExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -22,14 +25,14 @@ public class DustAPIController {
 
   @GetMapping("/dust-status")
 
-  public ResponseEntity<DustInfoByStationDto> getDustInfo(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude) throws IOException {
+  public ResponseEntity<DustInfoByStationDto> getDustInfo(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude)
+      throws IOException, ExecutionException, InterruptedException {
     logger.info("latitude: {}, longitude: {}", latitude, longitude);
 
-//    todo
-//    tm 좌표 변환
+    LocationReturnDto locationReturnDto = LocationConverterUtil.locationConverter(latitude, longitude);
 
-    String tmX = "35";
-    String tmY = "140";
+    String tmX = locationReturnDto.getLatitude();
+    String tmY = locationReturnDto.getLongitude();
 
     DustInfoByStationDto dustInfoByStationDto = DustStatusPublicApi.dustStatus(tmX, tmY);
 

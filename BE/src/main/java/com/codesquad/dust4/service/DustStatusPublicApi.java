@@ -17,9 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DustStatusPublicApi {
-    private static final String SERVICE_KEY = "GHE6PYOY0ZzdJ8j%2BISHC3VOKNQI1DG60chkCAE19uUD5s1XCnXOseXvJfBJkFZlI1zpn2EGLDnkYy%2FQrgLpd6A%3D%3D";
-    private static final String PUBLIC_API_REQUEST_URL = "http://openapi.airkorea.or.kr/openapi/services/rest/";
-
     public static DustInfoByStationDto dustStatus(String tmX, String tmY) throws IOException {
         String response = stationFromPublicApi(tmX, tmY);
         LocationOfStation closestStation = closestStation(response);
@@ -55,10 +52,9 @@ public class DustStatusPublicApi {
     }
 
     private static String stationFromPublicApi(String tmX, String tmY) throws IOException {
-        URL url = new URL(PUBLIC_API_REQUEST_URL + "MsrstnInfoInqireSvc/getNearbyMsrstnList?ServiceKey=" + SERVICE_KEY +
+        URL url = new URL(PublicApi.API_URL + "MsrstnInfoInqireSvc/getNearbyMsrstnList?ServiceKey=" + PublicApi.API_KEY +
                 "&tmX=" + tmX +
                 "&tmY=" + tmY +
-                "&ver=1.0" +
                 "&_returnType=json");
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -115,15 +111,15 @@ public class DustStatusPublicApi {
 
 
     private static String dustStatusFromPublicApi(LocationOfStation station) throws IOException {
-        URL url = new URL(PUBLIC_API_REQUEST_URL +
+        URL url = new URL(PublicApi.API_URL +
                 "ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=" +
                 station.getStationName() + "&dataTerm=DAILY&pageNo=1&numOfRows=25&ServiceKey=" +
-                SERVICE_KEY +
+                PublicApi.API_KEY +
                 "&ver=1.3&_returnType=json");
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
-        connection.setRequestProperty("Cotent-type", "application/json");
+        connection.setRequestProperty("Content-type", "application/json");
 
         return readString(connection);
     }

@@ -1,1 +1,365 @@
-/* No CSS */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+/* Layout */
+/* color */
+/* Font-family */
+/* Font-size */
+/* media query size */
+@media screen and (min-width: 480px) {
+  html,
+  body,
+  div,
+  span,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  abbr,
+  address,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  samp,
+  small,
+  strong,
+  sub,
+  sup,
+  var,
+  b,
+  i,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html,
+  body,
+  div,
+  span,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  abbr,
+  address,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  samp,
+  small,
+  strong,
+  sub,
+  sup,
+  var,
+  b,
+  i,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html,
+  body,
+  div,
+  span,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  abbr,
+  address,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  samp,
+  small,
+  strong,
+  sub,
+  sup,
+  var,
+  b,
+  i,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    font-size: 16px;
+  }
+}
+
+#dust {
+  text-align: center;
+}
+
+#dust img {
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
+
+#dust.grade-1 {
+  background: #0374b8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0374b8), color-stop(50%, rgba(3, 116, 184, 0.6)), to(white));
+  background: linear-gradient(180deg, #0374b8 0%, rgba(3, 116, 184, 0.6) 50%, white 100%);
+}
+
+#dust.grade-2 {
+  background: #0194a1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0194a1), color-stop(70%, rgba(1, 148, 161, 0.6)), to(white));
+  background: linear-gradient(180deg, #0194a1 0%, rgba(1, 148, 161, 0.6) 70%, white 100%);
+}
+
+#dust.grade-3 {
+  background: #e96902;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e96902), color-stop(70%, rgba(233, 105, 2, 0.6)), to(white));
+  background: linear-gradient(180deg, #e96902 0%, rgba(233, 105, 2, 0.6) 70%, white 100%);
+}
+
+#dust.grade-4 {
+  background: #c22827;
+  background: -webkit-gradient(linear, left top, left bottom, from(#c22827), color-stop(70%, rgba(194, 40, 39, 0.6)), to(white));
+  background: linear-gradient(180deg, #c22827 0%, rgba(194, 40, 39, 0.6) 70%, white 100%);
+}
+
+#dust .grade-view {
+  height: 40vh;
+}
+
+#dust .timeline-view {
+  height: 36vh;
+  padding: 2%;
+  margin: 2vh 5%;
+}
+
+.grade-view .status-img {
+  height: 20vh;
+}
+
+.grade-view .status-img img {
+  height: 100%;
+}
+
+.grade-view .status-wrap {
+  padding: 2%;
+  margin: 0 5%;
+  max-height: 20vh;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  text-shadow: 2px 2px 2px #aaa;
+  line-height: 1.5;
+}
+
+.grade-view .status-wrap .status-txt {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.grade-view .status-wrap .status-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grade-view .status-wrap .status-display > div,
+.grade-view .status-wrap .status-display > div span {
+  font-size: 1.5em;
+}
+
+.grade-view .status-wrap .status-display > div {
+  margin: 0 10px;
+}
+
+.grade-view .status-wrap .status-display > div span {
+  margin: 0 5px;
+}
+
+.grade-view .status-wrap .status-station,
+.grade-view .status-wrap .status-station * {
+  font-size: 1.25em;
+}
+
+.grade-view .status-wrap .status-station strong {
+  margin-right: 2px;
+}
+
+.timeline-view {
+  overflow-y: auto;
+  border-radius: 30px 30px 0 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.timeline-view .dust-timeline li {
+  margin: 1%;
+}
+
+.timeline-view .dust-timeline li span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  background: #0474b8;
+}
+
+.timeline-view .dust-timeline li span.dust-grade2 {
+  background: #0194a1;
+}
+
+.timeline-view .dust-timeline li span.dust-grade3 {
+  background: #e96902;
+}
+
+.timeline-view .dust-timeline li span.dust-grade4 {
+  background: #c22827;
+}

@@ -19,13 +19,16 @@
     background: linear-gradient(180deg, rgba(3, 116, 184, 1) 0%, rgba(3, 116, 184, 0.6) 50%, rgba(255, 255, 255, 1) 100%);
   }
   &.grade-2 {
-    background: #0194a1;
+    background: rgb(1, 148, 161);
+    background: linear-gradient(180deg, rgba(1, 148, 161, 1) 0%, rgba(1, 148, 161, 0.6) 70%, rgba(255, 255, 255, 1) 100%);
   }
   &.grade-3 {
-    background: #e96902;
+    background: rgb(233, 105, 2);
+    background: linear-gradient(180deg, rgba(233, 105, 2, 1) 0%, rgba(233, 105, 2, 0.6) 70%, rgba(255, 255, 255, 1) 100%);
   }
   &.grade-4 {
-    background: #c22827;
+    background: rgb(194, 40, 39);
+    background: linear-gradient(180deg, rgba(194, 40, 39, 1) 0%, rgba(194, 40, 39, 0.6) 70%, rgba(255, 255, 255, 1) 100%);
   }
 }
 
@@ -61,13 +64,14 @@
       font-size: $font-size-extra-large;
     }
     .status-display {
-      display:flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      > div, > div span {
+      > div,
+      > div span {
         font-size: $font-size-extra;
       }
-      > div { 
+      > div {
         margin: 0 10px;
       }
       > div span {
@@ -87,7 +91,7 @@
 .timeline-view {
   overflow-y: auto;
   border-radius: 30px 30px 0 0;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   .dust-timeline {
     li {
       margin: 1%;

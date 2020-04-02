@@ -1,12 +1,16 @@
-const DEFAULT_STATION = '종로구';
-
-const DUST_GARADE = {
+const DUST_GRADE = {
+  STATUS_CLASS: {
+    '1': 'grade-1',
+    '2': 'grade-2',
+    '3': 'grade-3',
+    '4': 'grade-4'
+  },
   STATUS_MESSAGE: {
-    GOOD: '좋음',
-    NORMAL: '보통',
-    BAD: '나쁨',
-    VERY_BAD: '매우나쁨'
+    '1': '좋음',
+    '2': '보통',
+    '3': '나쁨',
+    '4': '매우나쁨'
   }
 };
 
-export { DEFAULT_STATION, DUST_GARADE };
+export { DUST_GRADE };

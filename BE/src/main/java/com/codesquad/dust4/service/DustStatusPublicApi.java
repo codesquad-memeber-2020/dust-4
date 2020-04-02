@@ -122,7 +122,7 @@ public class DustStatusPublicApi {
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
-        connection.setRequestProperty("Cotent-type", "application/json");
+        connection.setRequestProperty("Content-type", "application/json");
 
         return readString(connection);
     }

@@ -12,7 +12,7 @@ class DataTask {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
-    func requestInfoFromNearStation(latitude: Int, longitude: Int) {
+    func requestInfoFromNearStation(latitude: Double, longitude: Double) {
         guard var urlComponent = URLComponents(string: "http://13.124.46.74:8080/dust-status") else { return }
         let latitudeQuery = URLQueryItem(name: "latitude", value: String(latitude))
         let longtitudeQuery = URLQueryItem(name: "longitude", value: String(longitude))

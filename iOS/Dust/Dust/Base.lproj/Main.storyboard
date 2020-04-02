@@ -38,6 +38,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OOO 측정소 기준" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIc-k8-PCa">
+                                        <rect key="frame" x="122" y="353" width="132" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-sd-TnK" customClass="EmojiStatusLabel" customModule="Dust" customModuleProvider="target">
                                         <rect key="frame" x="112" y="108" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,13 +59,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OOO 측정소 기준" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIc-k8-PCa">
-                                        <rect key="frame" x="122" y="353" width="132" height="20"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="Hhv-Ka-Y90">
+                                        <rect key="frame" x="0.0" y="161" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -128,6 +132,7 @@
                     <connections>
                         <outlet property="DustTableView" destination="VVp-ff-Onb" id="nlO-6O-OlT"/>
                         <outlet property="dustTableView" destination="VVp-ff-Onb" id="Lbf-qO-woz"/>
+                        <outlet property="loadingIndicator" destination="Hhv-Ka-Y90" id="vvJ-H0-aWg"/>
                         <outlet property="measureDay" destination="l4i-Jx-uWD" id="iHh-4u-DKX"/>
                         <outlet property="measureStation" destination="oIc-k8-PCa" id="lAC-Uc-GIr"/>
                         <outlet property="ppmText" destination="Bze-ZD-Pr8" id="K5B-Q8-ctt"/>

@@ -19,6 +19,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var measureDay: UILabel!
     @IBOutlet weak var measureStation: UILabel!
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     let dataTask = DataTask()
     var tableViewDataSource = StatusTableViewDataSource()
     var tableViewDelegate = StatusTableViewDelegate()
@@ -31,11 +33,15 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLocationManager()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(setStatusUIView), name: .tableViewChangeFirstRow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setTableView), name: .dataLoadComplete, object: nil)
+        
         self.dustTableView.dataSource = tableViewDataSource
         self.dustTableView.delegate = tableViewDelegate
+        
         self.gradientLayer = CAGradientLayer()
+         self.loadingIndicator.startAnimating()
     }
     
     private func setUpLocationManager() {
@@ -45,8 +51,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     }
         
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let coor = manager.location?.coordinate{
-            dataTask.requestInfoFromNearStation(latitude: Int(coor.latitude), longitude: Int(coor.longitude))
+        if let coor = manager.location?.coordinate {
+            print(coor.latitude, coor.longitude)
+            dataTask.requestInfoFromNearStation(latitude: Double(coor.latitude), longitude: Double(coor.longitude))
         }
     }
     
@@ -97,13 +104,14 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         self.dustData = notificationInfo["responseData"]
         self.tableViewDataSource.dustData = dustData
         self.dustTableView.reloadData()
+        
+        self.loadingIndicator.stopAnimating()
+        self.loadingIndicator.isHidden = true
     }
     
     private func updateDate(dateTime: Date) {
         let today = Date()
-        print(today)
         let interval = Int((today.timeIntervalSince(dateTime)) / 86400)
-        
         let measureTime = DateFormatter.hourMinuteFormatter.string(from: dateTime)
         
         if interval == 0 {
@@ -115,8 +123,6 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     private func changeGradientView(colorArray: [CGColor]) {
         self.gradientLayer.frame = self.view.bounds
-        
-        
         self.gradientLayer.colors = colorArray
         self.view.layer.insertSublayer(self.gradientLayer, at: 0)
     }

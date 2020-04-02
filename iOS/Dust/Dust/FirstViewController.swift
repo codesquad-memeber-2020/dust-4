@@ -28,10 +28,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLocationManager()
+        NotificationCenter.default.addObserver(self, selector: #selector(setStatusUIView), name: .tableViewChangeFirstRow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setTableView), name: .dataLoadComplete, object: nil)
         self.dustTableView.dataSource = tableViewDataSource
         self.dustTableView.delegate = tableViewDelegate
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(setStatusUIView), name: .tableViewChangeFirstRow, object: nil)
     }
     
     private func setUpLocationManager() {
@@ -41,16 +41,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
-    
+        
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let coor = manager.location?.coordinate{
-            dataTask.requestInfoFromNearStation(latitude: Int(coor.latitude), longitude: Int(coor.longitude)) { (DustData) in
-                self.dustData = DustData
-                self.tableViewDataSource.dustData = DustData
-                self.dustTableView.reloadData()
-            }
+            dataTask.requestInfoFromNearStation(latitude: Int(coor.latitude), longitude: Int(coor.longitude))
+            locationManager.stopUpdatingLocation()
         }
-        locationManager.stopUpdatingLocation()
     }
     
     @objc func setStatusUIView(notification: Notification) {
@@ -82,4 +78,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         measureStation.text = "\(stationName) 측정소 기준"
     }
     
+    @objc func setTableView(notification: Notification) {
+        guard let notificationInfo = notification.userInfo as? [String: DustData] else { return }
+        self.dustData = notificationInfo["responseData"]
+        self.tableViewDataSource.dustData = dustData
+        self.dustTableView.reloadData()
+    }
 }

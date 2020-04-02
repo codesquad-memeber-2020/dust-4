@@ -25,8 +25,8 @@ public class LocationConverterUtil {
     ArrayList<String> parsedLocation = ParseJSONDataUtil.parseLocationJSON(receivedTmLocation);
 
     LocationReturnDto locationReturnDto = new LocationReturnDto();
-    locationReturnDto.setLatitude(parsedLocation.get(0));
-    locationReturnDto.setLongitude(parsedLocation.get(1));
+    locationReturnDto.setLongitude(parsedLocation.get(0));
+    locationReturnDto.setLatitude(parsedLocation.get(1));
 
     return locationReturnDto;
   }

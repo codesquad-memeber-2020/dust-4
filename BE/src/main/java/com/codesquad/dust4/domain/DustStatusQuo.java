@@ -8,8 +8,7 @@ public class DustStatusQuo {
 
   public DustStatusQuo() {}
 
-  public DustStatusQuo(String dataTime, String pm10Value,
-      String pm10Value24, String pm10Grade, String pm10Grade1h) {
+  public DustStatusQuo(String dataTime, String pm10Value, String pm10Grade) {
     this.dataTime = dataTime;
     this.pm10Value = pm10Value;
     this.pm10Grade = pm10Grade;
@@ -37,5 +36,14 @@ public class DustStatusQuo {
 
   public void setPm10Grade(String pm10Grade) {
     this.pm10Grade = pm10Grade;
+  }
+
+  @Override
+  public String toString() {
+    return "DustStatusQuo{" +
+            "dataTime='" + dataTime + '\'' +
+            ", pm10Value='" + pm10Value + '\'' +
+            ", pm10Grade='" + pm10Grade + '\'' +
+            '}';
   }
 }

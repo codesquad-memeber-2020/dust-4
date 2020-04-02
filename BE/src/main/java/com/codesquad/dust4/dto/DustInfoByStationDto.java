@@ -11,6 +11,11 @@ public class DustInfoByStationDto {
 
   public DustInfoByStationDto() {}
 
+  public DustInfoByStationDto(List<DustStatusQuo> content, LocationOfStation location) {
+    this.content = content;
+    this.location = location;
+  }
+
   public List<DustStatusQuo> getContent() {
     return content;
   }

@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="25" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VVp-ff-Onb" customClass="StatusTableView" customModule="Dust" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="25" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VVp-ff-Onb">
                                 <rect key="frame" x="0.0" y="423" width="414" height="390"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -59,7 +59,7 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="wZ6-1g-Brz"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRr-SL-1vg" customClass="StatusView" customModule="Dust" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRr-SL-1vg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="423"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hA0-aY-HxI">
@@ -75,8 +75,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5 𝜇g/m³" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bze-ZD-Pr8">
-                                        <rect key="frame" x="77" y="331" width="103" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5 𝜇g/m³" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bze-ZD-Pr8">
+                                        <rect key="frame" x="77" y="331" width="142" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
@@ -97,7 +97,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-sd-TnK" customClass="EmojiStatusLabel" customModule="Dust" customModuleProvider="target">
-                                        <rect key="frame" x="132" y="123" width="150" height="150"/>
+                                        <rect key="frame" x="132" y="122" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="135"/>
                                         <nil key="textColor"/>
@@ -109,13 +109,6 @@
                                     <constraint firstItem="hA0-aY-HxI" firstAttribute="centerX" secondItem="CRr-SL-1vg" secondAttribute="centerX" id="vHL-Uz-l4o"/>
                                     <constraint firstItem="hA0-aY-HxI" firstAttribute="top" secondItem="CRr-SL-1vg" secondAttribute="topMargin" id="yqP-Ol-8DO"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="dateTime" destination="l4i-Jx-uWD" id="VIw-Nn-aZR"/>
-                                    <outlet property="gradeStatus" destination="htH-Zk-XkM" id="JeF-tO-mcz"/>
-                                    <outlet property="gradeStatusEmoji" destination="rI0-sd-TnK" id="T9G-00-lcS"/>
-                                    <outlet property="ppm" destination="Bze-ZD-Pr8" id="iUU-Pd-3KY"/>
-                                    <outlet property="stationName" destination="oIc-k8-PCa" id="k2H-u4-LTK"/>
-                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -133,6 +126,12 @@
                     <tabBarItem key="tabBarItem" title="미세먼지" image="cloud.fill" catalog="system" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="DustTableView" destination="VVp-ff-Onb" id="nlO-6O-OlT"/>
+                        <outlet property="dustTableView" destination="VVp-ff-Onb" id="Lbf-qO-woz"/>
+                        <outlet property="measureDay" destination="l4i-Jx-uWD" id="iHh-4u-DKX"/>
+                        <outlet property="measureStation" destination="oIc-k8-PCa" id="lAC-Uc-GIr"/>
+                        <outlet property="ppmText" destination="Bze-ZD-Pr8" id="K5B-Q8-ctt"/>
+                        <outlet property="statusEmoji" destination="rI0-sd-TnK" id="L6k-U4-XnK"/>
+                        <outlet property="statusText" destination="htH-Zk-XkM" id="Vut-LN-8y0"/>
                         <outlet property="statusView" destination="CRr-SL-1vg" id="rtq-NH-Pyk"/>
                     </connections>
                 </viewController>

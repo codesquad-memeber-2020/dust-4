@@ -25,7 +25,6 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager:CLLocationManager!
     
     var dustData: DustData!
-    let today = Date()
     
     var gradientLayer: CAGradientLayer!
     
@@ -42,16 +41,17 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     private func setUpLocationManager() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
+        locationManager.requestLocation()
     }
         
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let coor = manager.location?.coordinate{
             dataTask.requestInfoFromNearStation(latitude: Int(coor.latitude), longitude: Int(coor.longitude))
-            locationManager.stopUpdatingLocation()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        return
     }
     
     @objc func setStatusUIView(notification: Notification) {
@@ -99,21 +99,17 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         self.dustTableView.reloadData()
     }
     
-    private func updateDate(dateTime: String) {
-        let seperateDate = dateTime.components(separatedBy: " ")
-        let stringDay = seperateDate[0]
-        let stringTime = seperateDate[1]
+    private func updateDate(dateTime: Date) {
+        let today = Date()
+        print(today)
+        let interval = Int((today.timeIntervalSince(dateTime)) / 86400)
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: stringDay)
-        
-        let interval = Int((date?.timeIntervalSince(today))! / 86400)
+        let measureTime = DateFormatter.hourMinuteFormatter.string(from: dateTime)
         
         if interval == 0 {
-            measureDay.text = "오늘 \(stringTime)"
+            measureDay.text = "오늘 \(measureTime)"
         } else {
-            measureDay.text = "어제 \(stringTime)"
+            measureDay.text = "어제 \(measureTime)"
         }
     }
     

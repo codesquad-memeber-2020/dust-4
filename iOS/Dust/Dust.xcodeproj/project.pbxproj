@@ -25,6 +25,7 @@
 		ABA758922433425F00FE078E /* TextStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758912433425F00FE078E /* TextStatusLabel.swift */; };
 		ABA758942433426F00FE078E /* EmojiStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758932433426F00FE078E /* EmojiStatusLabel.swift */; };
 		ABA75896243454D300FE078E /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA75895243454D300FE078E /* StatusBarView.swift */; };
+		ABFFC54524364C5200D0AA7D /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFC54424364C5200D0AA7D /* DateFormatterExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		ABA758912433425F00FE078E /* TextStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStatusLabel.swift; sourceTree = "<group>"; };
 		ABA758932433426F00FE078E /* EmojiStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiStatusLabel.swift; sourceTree = "<group>"; };
 		ABA75895243454D300FE078E /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		ABFFC54424364C5200D0AA7D /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3F144E2435B0E70066D261 /* NotificationExtension.swift */,
+				ABFFC54424364C5200D0AA7D /* DateFormatterExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			files = (
 				ABA758882433152600FE078E /* StatusTableViewDataSource.swift in Sources */,
 				ABA758562431CE3200FE078E /* SecondViewController.swift in Sources */,
+				ABFFC54524364C5200D0AA7D /* DateFormatterExtension.swift in Sources */,
 				ABA758922433425F00FE078E /* TextStatusLabel.swift in Sources */,
 				ABA758542431CE3200FE078E /* FirstViewController.swift in Sources */,
 				AB3F144F2435B0E70066D261 /* NotificationExtension.swift in Sources */,

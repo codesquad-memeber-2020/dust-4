@@ -13,7 +13,7 @@ class DataTask {
     var dataTask: URLSessionDataTask?
     
     func requestInfoFromNearStation(latitude: Int, longitude: Int) {
-        guard var urlComponent = URLComponents(string: "http://ec2-54-180-112-37.ap-northeast-2.compute.amazonaws.com:8080/dust-status") else { return }
+        guard var urlComponent = URLComponents(string: "http://13.124.46.74:8080/dust-status") else { return }
         let latitudeQuery = URLQueryItem(name: "latitude", value: String(latitude))
         let longtitudeQuery = URLQueryItem(name: "longitude", value: String(longitude))
         urlComponent.queryItems = [latitudeQuery, longtitudeQuery]
@@ -24,7 +24,10 @@ class DataTask {
         dataTask = defaultSession.dataTask(with: request) { (data, response, error) in
             if let error = error { print(error); return }
             
-            guard let data = data, let responseData = try? JSONDecoder().decode(DustData.self, from: data) else { print("responseDataError"); return; }
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(.timeDecodingFormatter)
+            
+            guard let data = data, let responseData = try? decoder.decode(DustData.self, from: data) else { print("responseDataError"); return; }
             
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .dataLoadComplete, object: nil, userInfo: ["responseData":responseData])

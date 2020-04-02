@@ -20,12 +20,14 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var measureStation: UILabel!
     
     let dataTask = DataTask()
-    var locationManager:CLLocationManager!
     var tableViewDataSource = StatusTableViewDataSource()
     var tableViewDelegate = StatusTableViewDelegate()
-    var dustData: DustData!
+    var locationManager:CLLocationManager!
     
+    var dustData: DustData!
     let today = Date()
+    
+    var gradientLayer: CAGradientLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(setTableView), name: .dataLoadComplete, object: nil)
         self.dustTableView.dataSource = tableViewDataSource
         self.dustTableView.delegate = tableViewDelegate
+        self.gradientLayer = CAGradientLayer()
     }
     
     private func setUpLocationManager() {
@@ -54,24 +57,30 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     @objc func setStatusUIView(notification: Notification) {
         guard let notificationInfo = notification.userInfo as? [String: Int] else { return }
         let row = notificationInfo["currentFirstRow"]!
-        
+    
         let ppmGrade = dustData.content[row].pm10Grade
         let ppmValue = dustData.content[row].pm10Value
         let stationName = dustData.location.stationName
+        
+        var colors = [CGColor]()
         
         switch Int(ppmGrade) {
         case 1:
             statusEmoji.status = .good
             statusText.status = .good
+            colors = [UIColor(named: "goodGradientStart")!.cgColor, UIColor(named: "goodGradientEnd")!.cgColor]
         case 2:
             statusEmoji.status = .normal
             statusText.status = .normal
+            colors = [UIColor(named: "normalGradientStart")!.cgColor, UIColor(named: "normalGradientEnd")!.cgColor]
         case 3:
             statusEmoji.status = .bad
             statusText.status = .bad
+            colors = [UIColor(named: "badGradientStart")!.cgColor, UIColor(named: "badGradientEnd")!.cgColor]
         case 4:
             statusEmoji.status = .critical
             statusText.status = .critical
+            colors = [UIColor(named: "criticalGradientStart")!.cgColor, UIColor(named: "criticalGradientEnd")!.cgColor]
         default:
             return
         }
@@ -79,6 +88,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         ppmText.text = "\(ppmValue) 𝜇g/m³"
         measureStation.text = "\(stationName) 측정소 기준"
         updateDate(dateTime: dustData.content[row].dataTime)
+        
+        changeGradientView(colorArray: colors)
     }
     
     @objc func setTableView(notification: Notification) {
@@ -104,5 +115,13 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             measureDay.text = "어제 \(stringTime)"
         }
+    }
+    
+    private func changeGradientView(colorArray: [CGColor]) {
+        self.gradientLayer.frame = self.view.bounds
+        
+        
+        self.gradientLayer.colors = colorArray
+        self.view.layer.insertSublayer(self.gradientLayer, at: 0)
     }
 }

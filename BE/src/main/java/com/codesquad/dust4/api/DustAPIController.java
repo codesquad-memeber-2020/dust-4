@@ -5,9 +5,14 @@ import com.codesquad.dust4.dto.DustInfoByStationDto;
 import com.codesquad.dust4.dto.ForecastResponseDto;
 import com.codesquad.dust4.dto.LocationReturnDto;
 import com.codesquad.dust4.service.DustStatusPublicApi;
+import com.codesquad.dust4.service.ForecastPublicApi;
 import com.codesquad.dust4.utils.DustMockDataUtil;
 import com.codesquad.dust4.utils.LocationConverterUtil;
+
+import java.net.URISyntaxException;
 import java.util.concurrent.ExecutionException;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -40,13 +45,14 @@ public class DustAPIController {
   }
 
   @GetMapping("/forecast")
-  public ResponseEntity<ForecastResponseDto> enlistDustForecast() {
+  public ResponseEntity<ForecastResponseDto> enlistDustForecast() throws URISyntaxException, JsonProcessingException {
 
     logger.info("dust forecast");
 
-    DustForecast dumpData = DustMockDataUtil.createDumpDustForecastData();
+    DustForecast forecast = ForecastPublicApi.forecast();
     ForecastResponseDto responseDto = new ForecastResponseDto();
-    responseDto.setContent(dumpData);
+    responseDto.setContent(forecast);
+
     return new ResponseEntity<>(responseDto, HttpStatus.OK);
   }
 }

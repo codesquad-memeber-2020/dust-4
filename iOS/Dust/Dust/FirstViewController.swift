@@ -25,6 +25,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     var tableViewDelegate = StatusTableViewDelegate()
     var dustData: DustData!
     
+    let today = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLocationManager()
@@ -76,6 +78,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         ppmText.text = "\(ppmValue) 𝜇g/m³"
         measureStation.text = "\(stationName) 측정소 기준"
+        updateDate(dateTime: dustData.content[row].dataTime)
     }
     
     @objc func setTableView(notification: Notification) {
@@ -83,5 +86,23 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         self.dustData = notificationInfo["responseData"]
         self.tableViewDataSource.dustData = dustData
         self.dustTableView.reloadData()
+    }
+    
+    private func updateDate(dateTime: String) {
+        let seperateDate = dateTime.components(separatedBy: " ")
+        let stringDay = seperateDate[0]
+        let stringTime = seperateDate[1]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: stringDay)
+        
+        let interval = Int((date?.timeIntervalSince(today))! / 86400)
+        
+        if interval == 0 {
+            measureDay.text = "오늘 \(stringTime)"
+        } else {
+            measureDay.text = "어제 \(stringTime)"
+        }
     }
 }

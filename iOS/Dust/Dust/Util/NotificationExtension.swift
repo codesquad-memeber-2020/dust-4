@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let tableViewChangeFirstRow = Notification.Name("tableViewChangeFirstRow")
+    static let dataLoadComplete = Notification.Name("dataLoadComplete")
 }

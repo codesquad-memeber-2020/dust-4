@@ -11,6 +11,6 @@ import UIKit
 class StatusTableViewDelegate: NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let firstVisibleIndexRow = tableView.indexPathsForVisibleRows?[0].row
-        NotificationCenter.default.post(name: .tableViewChangeFirstRow, object: nil, userInfo: ["currentFirstRow":firstVisibleIndexRow])
+        NotificationCenter.default.post(name: .tableViewChangeFirstRow, object: nil, userInfo: ["currentFirstRow":firstVisibleIndexRow ?? 0])
     }
 }

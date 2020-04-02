@@ -1,12 +1,13 @@
 package com.codesquad.dust4.api;
 
 import com.codesquad.dust4.domain.DustForecast;
-import com.codesquad.dust4.domain.DustStatusQuo;
-import com.codesquad.dust4.domain.LocationOfStation;
 import com.codesquad.dust4.dto.DustInfoByStationDto;
 import com.codesquad.dust4.dto.ForecastResponseDto;
+import com.codesquad.dust4.dto.LocationReturnDto;
+import com.codesquad.dust4.service.DustStatusPublicApi;
 import com.codesquad.dust4.utils.DustMockDataUtil;
-import java.util.ArrayList;
+import com.codesquad.dust4.utils.LocationConverterUtil;
+import java.util.concurrent.ExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -15,30 +16,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 public class DustAPIController {
 
   private static final Logger logger = LoggerFactory.getLogger(DustAPIController.class);
 
   @GetMapping("/dust-status")
-  public ResponseEntity<DustInfoByStationDto> getDustInfo(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude) {
 
-    logger.info("latitude: {}, longitude: {}", latitude, longitude);
+  public ResponseEntity<DustInfoByStationDto> getDustInfo(@RequestParam("latitude") String EPSGlatitude, @RequestParam("longitude") String EPSGlongitude)
+      throws IOException, ExecutionException, InterruptedException {
+    logger.info("longitude: {}, latitude: {}", EPSGlongitude, EPSGlatitude);
 
-    ArrayList<DustStatusQuo> MockList = new ArrayList<>();
-    LocationOfStation MockStation = new LocationOfStation("역삼동", "서울 강남구 역삼동 836-24", (float) 3.6);
+    LocationReturnDto locationReturnDto = LocationConverterUtil.locationConverter(EPSGlongitude, EPSGlatitude);
 
-    for (int i = 0; i < 24; i++) {
-      DustStatusQuo dumpData = DustMockDataUtil.CreateDumpDustStatusQuoData();
-      String dumpDataTime = "2020-03-30 " + i + ":00";
-      dumpData.setDataTime(dumpDataTime);
-      MockList.add(dumpData);
-    }
+    String tmX = locationReturnDto.getLongitude();
+    String tmY = locationReturnDto.getLatitude();
 
-    DustInfoByStationDto returnApiResponse = new DustInfoByStationDto();
-    returnApiResponse.setLocation(MockStation);
-    returnApiResponse.setContent(MockList);
-    return new ResponseEntity<>(returnApiResponse, HttpStatus.OK);
+    DustInfoByStationDto dustInfoByStationDto = DustStatusPublicApi.dustStatus(tmX, tmY);
+
+    return new ResponseEntity<>(dustInfoByStationDto, HttpStatus.OK);
   }
 
   @GetMapping("/forecast")

@@ -58,7 +58,6 @@ public class DustStatusPublicApi {
         URL url = new URL(PUBLIC_API_REQUEST_URL + "MsrstnInfoInqireSvc/getNearbyMsrstnList?ServiceKey=" + SERVICE_KEY +
                 "&tmX=" + tmX +
                 "&tmY=" + tmY +
-                "&ver=1.0" +
                 "&_returnType=json");
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -123,7 +122,7 @@ public class DustStatusPublicApi {
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
-        connection.setRequestProperty("Cotent-type", "application/json");
+        connection.setRequestProperty("Content-type", "application/json");
 
         return readString(connection);
     }

@@ -25,7 +25,7 @@ public class DustAPIController {
 
   @GetMapping("/dust-status")
 
-  public ResponseEntity<DustInfoByStationDto> getDustInfo(@RequestParam("latitude") String EPSGlongitude, @RequestParam("longitude") String EPSGlatitude)
+  public ResponseEntity<DustInfoByStationDto> getDustInfo(@RequestParam("latitude") String EPSGlatitude, @RequestParam("longitude") String EPSGlongitude)
       throws IOException, ExecutionException, InterruptedException {
     logger.info("longitude: {}, latitude: {}", EPSGlongitude, EPSGlatitude);
 

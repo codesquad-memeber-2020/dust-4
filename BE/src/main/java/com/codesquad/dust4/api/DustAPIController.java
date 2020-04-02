@@ -25,14 +25,14 @@ public class DustAPIController {
 
   @GetMapping("/dust-status")
 
-  public ResponseEntity<DustInfoByStationDto> getDustInfo(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude)
+  public ResponseEntity<DustInfoByStationDto> getDustInfo(@RequestParam("latitude") String EPSGlongitude, @RequestParam("longitude") String EPSGlatitude)
       throws IOException, ExecutionException, InterruptedException {
-    logger.info("latitude: {}, longitude: {}", latitude, longitude);
+    logger.info("longitude: {}, latitude: {}", EPSGlongitude, EPSGlatitude);
 
-    LocationReturnDto locationReturnDto = LocationConverterUtil.locationConverter(latitude, longitude);
+    LocationReturnDto locationReturnDto = LocationConverterUtil.locationConverter(EPSGlongitude, EPSGlatitude);
 
-    String tmX = locationReturnDto.getLatitude();
-    String tmY = locationReturnDto.getLongitude();
+    String tmX = locationReturnDto.getLongitude();
+    String tmY = locationReturnDto.getLatitude();
 
     DustInfoByStationDto dustInfoByStationDto = DustStatusPublicApi.dustStatus(tmX, tmY);
 

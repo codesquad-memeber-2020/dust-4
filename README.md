@@ -10,7 +10,7 @@
 
 ## 배포 링크
 
-* 웹 링크: [13.124.46.74](13.124.46.74)
+* 웹 링크: [13.124.46.74](ec2-13-124-46-74.ap-northeast-2.compute.amazonaws.com)
 * iOS 데모: [gif 보기](https://github.com/codesquad-member-2020/dust-4/blob/master/iOS_dust-4_demo.md)
 
 ## API 링크

@@ -75,7 +75,7 @@ const initRender = () => {
   updateDustTimelineView(timelineList);
 };
 
-const getLocation = () => {
+const initStatus = () => {
   if (navigator.geolocation) return navigator.geolocation.getCurrentPosition(showPosition);
   defualtPosition();
 };
@@ -93,9 +93,7 @@ const defualtPosition = async () => {
   });
   initRender();
 };
-const initStatus = async () => {
-  getLocation();
-};
+
 
 DUST_ELEMENT.timeline.addEventListener('touchstart', saveStartingPoint);
 DUST_ELEMENT.timeline.addEventListener('touchmove', e => calcIndexTouchMove(e, DUST_DATA.timelineLength));

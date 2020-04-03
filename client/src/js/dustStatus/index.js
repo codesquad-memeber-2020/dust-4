@@ -86,7 +86,7 @@ const initRender = () => {
 };
 
 const initStatus = () => {
-  if (navigator.geolocation) return navigator.geolocation.getCurrentPosition(showPosition);
+  if (navigator.geolocation) navigator.geolocation.getCurrentPosition(showPosition);
   defualtPosition();
 };
 const showPosition = async position => {

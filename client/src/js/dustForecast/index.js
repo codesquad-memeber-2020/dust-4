@@ -1,5 +1,5 @@
 import { DUST_API_URL } from '../../constant/constant.js';
-import { $SELETOR, $SELETOR_ALL, $GET } from '../../util/index.js';
+import { $SELETOR, $GET } from '../../util/index.js';
 
 const FORECAST_DATA = {
   grade: null,

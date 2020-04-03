@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미세먼지 Team Project</title>
+  <link rel="stylesheet" href="style/common.css">
+  <link rel="stylesheet" href="style/dust.css">
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <nav class="tab-nav">
+        <ul>
+          <li>미세먼지</li>
+          <li>예보</li>
+        </ul>
+      </nav>
+    </header>
+    <div id="container" class="tab-contents">
+      <section id="dust">
+        <h1 class="title">미세미세먼지</h1>
+        <div class="grade-view">
+          <div class="status-img"></div>
+          <div class="status-wrap">
+            <div class="status-txt"></div>
+            <div class="status-display">
+              <div class="display-value"><span></span>㎍/㎥</div>
+              <div class="display-time"><span></span></div>
+            </div>
+            <div class="status-station"><strong></strong>측정소 기준</div>
+          </div>
+        </div>
+        <div class="timeline-view">
+          <ul class="dust-timeline"></ul>
+        </div>
+      </section>
+      <section id="forecast">
+        <h1 class="title">미세먼지 예보</h1>
+        <div class="info-display"><img src="http://www.airkorea.or.kr/file/viewImage/?atch_id=138847" alt=""></div>
+        <p class="info-grade"></p>
+        <p class="info-overall"></p>
+        <div class="controller">
+          <button id="btn"></button>
+          <input class="slider" type="range" min="0" max="100" value="0" />
+        </div>
+      </section>
+    </div>
+    <footer>
+      <p>Dust project #team4 <strong>@codesquad</strong></p>
+    </footer>
+  </div>
+  <script src="dist/bundle.js"></script>
+</body>
+</html>

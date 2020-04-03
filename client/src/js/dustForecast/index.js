@@ -1,8 +1,5 @@
+import { DUST_API_URL } from '../../constant/constant.js';
 import { $SELETOR, $SELETOR_ALL, $GET } from '../../util/index.js';
-
-$GET(`http://13.124.46.74:8080/forecast`).then(data => {
-  localStorage.setItem('DUST_FORECAST', JSON.stringify(data));
-});
 
 const FORECAST_DATA = {
   grade: null,
@@ -18,7 +15,11 @@ const FORECAST_ELEMENT = {
   overall: $SELETOR('.info-overall')
 };
 
-const init = () => {
+const initForecast = async () => {
+  await $GET(DUST_API_URL.forecast)
+    .then(data => {
+    localStorage.setItem('DUST_FORECAST', JSON.stringify(data));
+  });
   const dustData = localStorage.getItem('DUST_FORECAST');
   const dustDataParse = JSON.parse(dustData);
   FORECAST_DATA.grade = dustDataParse.content.informGrade;
@@ -29,7 +30,6 @@ const init = () => {
   FORECAST_ELEMENT.overall.innerHTML = FORECAST_DATA.overall;
 };
 
-
 FORECAST_ELEMENT.slider.addEventListener('input', e => {
   const value = parseInt(e.target.value);
   const step = 100 / FORECAST_DATA.img.length;
@@ -38,4 +38,4 @@ FORECAST_ELEMENT.slider.addEventListener('input', e => {
   return printImg;
 });
 
-export { init };
+export { initForecast };

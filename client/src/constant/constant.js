@@ -1,3 +1,8 @@
+const DUST_API_URL = {
+  status: 'http://13.124.46.74:8080/dust-status',
+  forecast: 'http://13.124.46.74:8080/forecast'
+};
+
 const DUST_GRADE = {
   STATUS_CLASS: {
     '1': 'grade-1',
@@ -19,4 +24,4 @@ const DUST_GRADE = {
   }
 };
 
-export { DUST_GRADE };
+export { DUST_API_URL, DUST_GRADE };

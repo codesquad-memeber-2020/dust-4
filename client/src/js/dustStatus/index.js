@@ -1,18 +1,9 @@
-import { DUST_GRADE } from '../../constant/constant.js';
-import { $SELETOR, $SELETOR_ALL } from '../../util/index.js';
+import { DUST_API_URL, DUST_GRADE } from '../../constant/constant.js';
+import { $SELETOR, $SELETOR_ALL, $GET } from '../../util/index.js';
 
 let DUST_STATION = null;
 let DUST_TIMELINE = null;
 let DUST_TIMELINE_LENGTH = null;
-
-const init = () => {
-  const dustData = localStorage.getItem('DUST_STATUS');
-  const dustDataParse = JSON.parse(dustData);
-
-  DUST_STATION = dustDataParse.location.stationName;
-  DUST_TIMELINE = dustDataParse.content;
-  DUST_TIMELINE_LENGTH = DUST_TIMELINE.length - 1;
-};
 
 const DUST_ELEMENT = {
   wrap: $SELETOR('#dust'),
@@ -63,8 +54,13 @@ const updateDustStatusView = (curretDust = 0) => {
   return;
 };
 
-const dustStatusInit = () => {
-  init();
+const initRender = () => {
+  const dustData = localStorage.getItem('DUST_STATUS');
+  const dustDataParse = JSON.parse(dustData);
+
+  DUST_STATION = dustDataParse.location.stationName;
+  DUST_TIMELINE = dustDataParse.content;
+  DUST_TIMELINE_LENGTH = DUST_TIMELINE.length - 1;
   const timelineList = DUST_TIMELINE.reduce((list, item) => {
     const dustGrade = item.pm10Grade;
     const dustValue = item.pm10Value;
@@ -76,7 +72,29 @@ const dustStatusInit = () => {
   updateDustTimelineView(timelineList);
 };
 
+const getLocation = () => {
+  if (navigator.geolocation) return navigator.geolocation.getCurrentPosition(showPosition);
+  defualtPosition();
+};
+const showPosition = async position => {
+  const lati = position.coords.latitude;
+  const long = position.coords.longitude;
+  await $GET(`${DUST_API_URL.status}?latitude=${lati}&longitude=${long}`).then(data => {
+    localStorage.setItem('DUST_STATUS6', JSON.stringify(data));
+  });
+  initRender();
+};
+const defualtPosition = async () => {
+  await $GET(`${DUST_API_URL.status}?latitude=37.491076&longitude=127.033353`).then(data => {
+    localStorage.setItem('DUST_STATUS5', JSON.stringify(data));
+  });
+  initRender();
+};
+const initStatus = async () => {
+  getLocation();
+};
+
 DUST_ELEMENT.timeline.addEventListener('touchstart', saveStartingPoint);
 DUST_ELEMENT.timeline.addEventListener('touchmove', e => calcIndexTouchMove(e, DUST_TIMELINE_LENGTH));
 
-export { dustStatusInit };
+export { initStatus };

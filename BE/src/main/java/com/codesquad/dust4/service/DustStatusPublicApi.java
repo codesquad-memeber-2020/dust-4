@@ -47,8 +47,7 @@ public class DustStatusPublicApi {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-        return  stations.stream().reduce(stations.get(0), (closest, station) -> closest.getTm() >= station.getTm() ? closest : station);
+        return  stations.stream().reduce(stations.get(0), (closest, station) -> closest.getTm() <= station.getTm() ? closest : station);
     }
 
     private static String stationFromPublicApi(String tmX, String tmY) throws IOException {

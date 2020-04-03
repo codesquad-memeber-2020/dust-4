@@ -14,6 +14,7 @@ class StatusBarView: UIView {
         case normal
         case bad
         case critical
+        case error
     }
     
     var status: Status = .normal {
@@ -28,6 +29,7 @@ class StatusBarView: UIView {
         case .normal: self.backgroundColor = UIColor(named: "normalColor")
         case .bad: self.backgroundColor = UIColor(named: "badColor")
         case .critical: self.backgroundColor = UIColor(named: "cirticalColor")
+        case .error: self.backgroundColor = UIColor.systemGray
         }
     }
 }

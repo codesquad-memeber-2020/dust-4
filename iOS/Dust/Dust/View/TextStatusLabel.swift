@@ -14,6 +14,7 @@ class TextStatusLabel: UILabel {
         case normal
         case bad
         case critical
+        case error
     }
     
     var status: Status = .normal {
@@ -27,6 +28,7 @@ class TextStatusLabel: UILabel {
         case .normal: self.text = "보통"
         case .bad: self.text = "나쁨"
         case .critical: self.text = "매우나쁨"
+        case .error: self.text = "불러오지 못함"
         }
     }
 }

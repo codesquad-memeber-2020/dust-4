@@ -14,6 +14,7 @@ class EmojiStatusLabel: UILabel {
         case normal
         case bad
         case critical
+        case error
     }
     
     var status: Status = .normal {
@@ -27,6 +28,7 @@ class EmojiStatusLabel: UILabel {
         case .normal: self.text = "🙂"
         case .bad: self.text = "😷"
         case .critical: self.text = "😱"
+        case .error: self.text = "🤯"
         }
     }
 }

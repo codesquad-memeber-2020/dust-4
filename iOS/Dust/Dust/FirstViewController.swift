@@ -89,7 +89,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             statusText.status = .critical
             colors = [UIColor(named: "criticalGradientStart")!.cgColor, UIColor(named: "criticalGradientEnd")!.cgColor]
         default:
-            return
+            statusEmoji.status = .error
+            statusText.status = .error
+            colors = [UIColor(named: "errorGradientStart")!.cgColor, UIColor(named: "errorGradientEnd")!.cgColor]
         }
         
         ppmText.text = "\(ppmValue) 𝜇g/m³"
@@ -120,7 +122,6 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             measureDay.text = "어제 \(measureTime)"
         }
-
     }
     
     private func changeGradientView(colorArray: [CGColor]) {

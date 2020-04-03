@@ -21,7 +21,9 @@ const dustOption = {
   index: 0,
   scrollStartingPoint: 0,
   scrollEndPoint: 0,
-  prevDirection: 0
+  prevDirection: 0,
+  scrollIndex: 0,
+  maxScrollIndex: 10
 };
 
 const saveStartingPoint = e => (dustOption.scrollStartingPoint = e.touches[0].clientY);
@@ -30,13 +32,22 @@ const calcIndexTouchMove = (e, dataLength) => {
   dustOption.scrollEndPoint = e.touches[0].clientY;
   const direction = parseInt((dustOption.scrollStartingPoint - dustOption.scrollEndPoint) / 10);
   if (direction > dustOption.prevDirection) {
-    ++dustOption.index;
+    ++dustOption.scrollIndex;
+    if(dustOption.scrollIndex === dustOption.maxScrollIndex) {
+      ++dustOption.index;
+      dustOption.scrollIndex = 0;
+    }
     dustOption.index >= dataLength ? (dustOption.index = dataLength) : dustOption.index;
   }
   if (direction < dustOption.prevDirection) {
-    --dustOption.index;
+    ++dustOption.scrollIndex;
+    if(dustOption.scrollIndex === dustOption.maxScrollIndex) {
+      --dustOption.index;
+      dustOption.scrollIndex = 0;
+    }
     dustOption.index <= 0 ? (dustOption.index = 0) : dustOption.index;
   }
+  console.log(dustOption.index);
   return updateDustStatusView(dustOption.index);
 };
 

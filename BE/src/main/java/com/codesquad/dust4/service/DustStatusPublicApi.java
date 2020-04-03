@@ -76,7 +76,13 @@ public class DustStatusPublicApi {
                 JSONObject stationObject = (JSONObject) object;
                 String dateTime = String.valueOf(stationObject.get("dataTime"));
                 String grade = String.valueOf(stationObject.get("pm10Grade"));
+                if (grade.equals("-")) {
+                    grade = "0";
+                }
                 String value = String.valueOf(stationObject.get("pm10Value"));
+                if (value.equals("-")) {
+                    value = "0";
+                }
 
                 DustStatusQuo status = new DustStatusQuo(dateTime, value, grade);
                 statusList.add(status);

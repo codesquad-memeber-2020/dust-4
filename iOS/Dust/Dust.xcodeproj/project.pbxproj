@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB3F144C24359BC60066D261 /* StatusTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3F144B24359BC60066D261 /* StatusTableViewDelegate.swift */; };
+		AB3F144F2435B0E70066D261 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3F144E2435B0E70066D261 /* NotificationExtension.swift */; };
 		ABA758502431CE3200FE078E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7584F2431CE3200FE078E /* AppDelegate.swift */; };
 		ABA758522431CE3200FE078E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758512431CE3200FE078E /* SceneDelegate.swift */; };
 		ABA758542431CE3200FE078E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758532431CE3200FE078E /* FirstViewController.swift */; };
@@ -16,8 +18,6 @@
 		ABA7585E2431CE3300FE078E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA7585C2431CE3300FE078E /* LaunchScreen.storyboard */; };
 		ABA758692431CE3300FE078E /* DustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758682431CE3300FE078E /* DustTests.swift */; };
 		ABA758742431CE3300FE078E /* DustUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758732431CE3300FE078E /* DustUITests.swift */; };
-		ABA758832431F99C00FE078E /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758822431F99C00FE078E /* StatusView.swift */; };
-		ABA758852432F50400FE078E /* StatusTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758842432F50400FE078E /* StatusTableView.swift */; };
 		ABA758882433152600FE078E /* StatusTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758872433152600FE078E /* StatusTableViewDataSource.swift */; };
 		ABA7588C2433245B00FE078E /* DustTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7588B2433245B00FE078E /* DustTableCell.swift */; };
 		ABA7588E2433262B00FE078E /* DustData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7588D2433262B00FE078E /* DustData.swift */; };
@@ -25,6 +25,7 @@
 		ABA758922433425F00FE078E /* TextStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758912433425F00FE078E /* TextStatusLabel.swift */; };
 		ABA758942433426F00FE078E /* EmojiStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA758932433426F00FE078E /* EmojiStatusLabel.swift */; };
 		ABA75896243454D300FE078E /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA75895243454D300FE078E /* StatusBarView.swift */; };
+		ABFFC54524364C5200D0AA7D /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFC54424364C5200D0AA7D /* DateFormatterExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB3F144B24359BC60066D261 /* StatusTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewDelegate.swift; sourceTree = "<group>"; };
+		AB3F144E2435B0E70066D261 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		ABA7584C2431CE3200FE078E /* Dust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA7584F2431CE3200FE078E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA758512431CE3200FE078E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +63,6 @@
 		ABA7586F2431CE3300FE078E /* DustUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DustUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA758732431CE3300FE078E /* DustUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustUITests.swift; sourceTree = "<group>"; };
 		ABA758752431CE3300FE078E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABA758822431F99C00FE078E /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
-		ABA758842432F50400FE078E /* StatusTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableView.swift; sourceTree = "<group>"; };
 		ABA758872433152600FE078E /* StatusTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewDataSource.swift; sourceTree = "<group>"; };
 		ABA7588B2433245B00FE078E /* DustTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustTableCell.swift; sourceTree = "<group>"; };
 		ABA7588D2433262B00FE078E /* DustData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustData.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		ABA758912433425F00FE078E /* TextStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStatusLabel.swift; sourceTree = "<group>"; };
 		ABA758932433426F00FE078E /* EmojiStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiStatusLabel.swift; sourceTree = "<group>"; };
 		ABA75895243454D300FE078E /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		ABFFC54424364C5200D0AA7D /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB3F144D2435B0D90066D261 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AB3F144E2435B0E70066D261 /* NotificationExtension.swift */,
+				ABFFC54424364C5200D0AA7D /* DateFormatterExtension.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		ABA758432431CE3200FE078E = {
 			isa = PBXGroup;
 			children = (
@@ -119,10 +130,12 @@
 		ABA7584E2431CE3200FE078E /* Dust */ = {
 			isa = PBXGroup;
 			children = (
+				AB3F144D2435B0D90066D261 /* Util */,
 				ABA7588624330E9A00FE078E /* Model */,
 				ABA758812431F97400FE078E /* View */,
 				ABA7584F2431CE3200FE078E /* AppDelegate.swift */,
 				ABA758512431CE3200FE078E /* SceneDelegate.swift */,
+				AB3F144B24359BC60066D261 /* StatusTableViewDelegate.swift */,
 				ABA758532431CE3200FE078E /* FirstViewController.swift */,
 				ABA758552431CE3200FE078E /* SecondViewController.swift */,
 				ABA758572431CE3200FE078E /* Main.storyboard */,
@@ -154,10 +167,8 @@
 		ABA758812431F97400FE078E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ABA758822431F99C00FE078E /* StatusView.swift */,
 				ABA758932433426F00FE078E /* EmojiStatusLabel.swift */,
 				ABA758912433425F00FE078E /* TextStatusLabel.swift */,
-				ABA758842432F50400FE078E /* StatusTableView.swift */,
 				ABA758872433152600FE078E /* StatusTableViewDataSource.swift */,
 				ABA7588B2433245B00FE078E /* DustTableCell.swift */,
 				ABA75895243454D300FE078E /* StatusBarView.swift */,
@@ -307,17 +318,18 @@
 			files = (
 				ABA758882433152600FE078E /* StatusTableViewDataSource.swift in Sources */,
 				ABA758562431CE3200FE078E /* SecondViewController.swift in Sources */,
+				ABFFC54524364C5200D0AA7D /* DateFormatterExtension.swift in Sources */,
 				ABA758922433425F00FE078E /* TextStatusLabel.swift in Sources */,
 				ABA758542431CE3200FE078E /* FirstViewController.swift in Sources */,
+				AB3F144F2435B0E70066D261 /* NotificationExtension.swift in Sources */,
 				ABA7588E2433262B00FE078E /* DustData.swift in Sources */,
 				ABA75896243454D300FE078E /* StatusBarView.swift in Sources */,
+				AB3F144C24359BC60066D261 /* StatusTableViewDelegate.swift in Sources */,
 				ABA758942433426F00FE078E /* EmojiStatusLabel.swift in Sources */,
-				ABA758852432F50400FE078E /* StatusTableView.swift in Sources */,
 				ABA758502431CE3200FE078E /* AppDelegate.swift in Sources */,
 				ABA758902433271400FE078E /* DataTask.swift in Sources */,
 				ABA758522431CE3200FE078E /* SceneDelegate.swift in Sources */,
 				ABA7588C2433245B00FE078E /* DustTableCell.swift in Sources */,
-				ABA758832431F99C00FE078E /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PD6NDXJV23;
 				INFOPLIST_FILE = Dust/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -508,6 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PD6NDXJV23;
 				INFOPLIST_FILE = Dust/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

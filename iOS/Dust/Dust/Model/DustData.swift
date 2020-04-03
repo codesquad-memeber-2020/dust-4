@@ -3,7 +3,7 @@ import Foundation
 struct DustData: Codable {
     
     struct DetailData: Codable {
-        let dataTime: String
+        let dataTime: Date
         let pm10Value: String
         let pm10Grade: String
     }

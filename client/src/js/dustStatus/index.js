@@ -46,8 +46,7 @@ const calcIndexTouchMove = (e, dataLength) => {
       dustOption.scrollIndex = 0;
     }
     dustOption.index <= 0 ? (dustOption.index = 0) : dustOption.index;
-  }
-  console.log(dustOption.index);
+  } 
   return updateDustStatusView(dustOption.index);
 };
 

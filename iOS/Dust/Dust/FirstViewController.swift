@@ -39,6 +39,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         self.dustTableView.dataSource = tableViewDataSource
         self.dustTableView.delegate = tableViewDelegate
+        self.dustTableView.allowsSelection = false
         
         self.gradientLayer = CAGradientLayer()
          self.loadingIndicator.startAnimating()
@@ -52,7 +53,6 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let coor = manager.location?.coordinate {
-            print(coor.latitude, coor.longitude)
             dataTask.requestInfoFromNearStation(latitude: Double(coor.latitude), longitude: Double(coor.longitude))
         }
     }
@@ -110,15 +110,17 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func updateDate(dateTime: Date) {
-        let today = Date()
-        let interval = Int((today.timeIntervalSince(dateTime)) / 86400)
+        let todayConvertDay = DateFormatter.dayFormatter.string(from: Date())
+        let measureConvertDay = DateFormatter.dayFormatter.string(from: dateTime)
+        
         let measureTime = DateFormatter.hourMinuteFormatter.string(from: dateTime)
         
-        if interval == 0 {
+        if todayConvertDay == measureConvertDay {
             measureDay.text = "오늘 \(measureTime)"
         } else {
             measureDay.text = "어제 \(measureTime)"
         }
+
     }
     
     private func changeGradientView(colorArray: [CGColor]) {

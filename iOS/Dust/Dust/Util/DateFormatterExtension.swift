@@ -24,4 +24,12 @@ extension DateFormatter {
         formatter.timeZone = TimeZone(secondsFromGMT: 9)
         return formatter
     }()
+    
+    static let dayFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.timeZone = TimeZone(secondsFromGMT: 9)
+        return formatter
+    }()
 }

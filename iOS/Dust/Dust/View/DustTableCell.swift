@@ -27,17 +27,16 @@ class DustTableCell: UITableViewCell {
         case 2: self.statusbar.status = .normal
         case 3: self.statusbar.status = .bad
         case 4: self.statusbar.status = .critical
-            
-        default: return
+        default: self.statusbar.status = .error
         }
     }
     
     func setStatusBarWidth() {
-        guard let ppm = ppmStatus.text else { return }
+        guard let ppm = Int(ppmStatus.text!) else { return }
         let cellWidth = self.frame.width
         let cellHeight = self.frame.height
         
-        let barWidth = Int(cellWidth/200) * Int(ppm)!
+        let barWidth = Int(cellWidth/200) * Int(ppm)
         
         statusbar.frame = CGRect(x: 0, y: 0, width: barWidth, height: Int(cellHeight))
         self.addSubview(statusbar)

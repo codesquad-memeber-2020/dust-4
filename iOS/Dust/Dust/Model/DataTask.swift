@@ -12,21 +12,25 @@ class DataTask {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
-    func requestInfoFromNearStation(latitude: Int, longitude: Int, completion: @escaping (DustData)-> Void) {
-        guard var urlComponent = URLComponents(string: "http://ec2-15-164-216-75.ap-northeast-2.compute.amazonaws.com:8080/dust-status") else { return }
-        
+    func requestInfoFromNearStation(latitude: Double, longitude: Double) {
+        guard var urlComponent = URLComponents(string: "http://13.124.46.74:8080/dust-status") else { return }
         let latitudeQuery = URLQueryItem(name: "latitude", value: String(latitude))
         let longtitudeQuery = URLQueryItem(name: "longitude", value: String(longitude))
         urlComponent.queryItems = [latitudeQuery, longtitudeQuery]
+        
         guard let url = urlComponent.url else { return }
         let request = URLRequest(url: url)
+        
         dataTask = defaultSession.dataTask(with: request) { (data, response, error) in
             if let error = error { print(error); return }
             
-            guard let data = data, let responseData = try? JSONDecoder().decode(DustData.self, from: data) else { print("responseDataError"); return; }
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(.timeDecodingFormatter)
+            
+            guard let data = data, let responseData = try? decoder.decode(DustData.self, from: data) else { print("responseDataError"); return; }
             
             DispatchQueue.main.async {
-                completion(responseData)
+                NotificationCenter.default.post(name: .dataLoadComplete, object: nil, userInfo: ["responseData":responseData])
             }
         }
         dataTask!.resume()

@@ -93,13 +93,13 @@ const showPosition = async position => {
   const lati = position.coords.latitude;
   const long = position.coords.longitude;
   await $GET(`${DUST_API_URL.status}?latitude=${lati}&longitude=${long}`).then(data => {
-    localStorage.setItem('DUST_STATUS6', JSON.stringify(data));
+    localStorage.setItem('DUST_STATUS', JSON.stringify(data));
   });
   initRender();
 };
 const defualtPosition = async () => {
   await $GET(`${DUST_API_URL.status}?latitude=37.491076&longitude=127.033353`).then(data => {
-    localStorage.setItem('DUST_STATUS5', JSON.stringify(data));
+    localStorage.setItem('DUST_STATUS_DEFAULT', JSON.stringify(data));
   });
   initRender();
 };

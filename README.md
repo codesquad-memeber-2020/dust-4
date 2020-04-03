@@ -16,7 +16,7 @@
 ## API 링크
 
 * [공식 API 문서](https://github.com/codesquad-member-2020/dust-4/wiki/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-4%ED%8C%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-API-%EC%95%88%EB%82%B4)
-* [Swagger API 문서 자동화 툴 링크](13.124.46.74:8080/swagger-ui.html)
+* [Swagger API 문서 자동화 툴 링크](ec2-13-124-46-74.ap-northeast-2.compute.amazonaws.com:8080/swagger-ui.html)
 
 ## 요구사항 명세
 
